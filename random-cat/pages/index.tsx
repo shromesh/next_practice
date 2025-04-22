@@ -55,8 +55,9 @@ const fetchImage = async (): Promise<Image> => {
     return image;
 };
 
+// interfaceとか使えばもっといいやり方ができるのでは？
 // 型ガード関数
-const isImage = (value: unknown): value is Image => {
+const isImage = (value: unknown): value is Image => { // なぜboolではなくvalue is Imageがreturn typeなのか？
     // 値がオブジェクトなのか？
     if (!value || typeof value !== "object") {
         return false;
